@@ -1,0 +1,18 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = WhuanY
+	email = WYH4444813@gmail.com
+[credential]
+	helper = store
+[http]
+	proxy = http://127.0.0.1:8890
+[https]
+	proxy = http://127.0.0.1:8890
+[alias]
+    st = status
+    cm = commit
+    

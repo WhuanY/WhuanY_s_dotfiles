@@ -1,0 +1,14 @@
+{
+    "workbench.preferredHighContrastColorTheme": "Visual Studio Dark",
+    "terminal.integrated.inheritEnv": false,
+    "editor.accessibilitySupport": "off",
+    "explorer.confirmDragAndDrop": false,
+    "editor.largeFileOptimizations": false,
+    "git.openRepositoryInParentFolders": "never",
+    "workbench.preferredHighContrastLightColorTheme": "One Dark Modern",
+    "python.createEnvironment.trigger": "off",
+    "workbench.editorAssociations": {
+        "*.py": "default",
+        "{git,gitlens}:/**/*.{md,csv,svg}": "default"
+    }
+}

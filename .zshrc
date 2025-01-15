@@ -1,16 +1,31 @@
 # >>> my personal configuration for zsh >>>
 
-# prompt template from https://stackoverflow.com/questions/67587439/show-current-branch-on-prompt-on-zsh-shell
-autoload -Uz vcs_info
-precmd() { vcs_info }
-
-# Format the vcs_info_msg_0_ variable
-zstyle ':vcs_info:git:*' formats '%b'
-
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
 
-PROMPT='[%n@%m %1~]%F{green}(${vcs_info_msg_0_})%F{white}$ '
+# Check if we're in a Git repo and set the branch info
+if [[ -n "${vcs_info_msg_0_}" ]]; then
+    git_branch="(${vcs_info_msg_0_})"
+else
+    git_branch=""
+fi
+
+# Set colors
+USER_COLOR="%F{cyan}"
+HOST_COLOR="%F{magenta}"
+DIR_COLOR="%F{green}"
+BRANCH_COLOR="%F{yellow}"
+RESET_COLOR="%f"
+
+PROMPT='[${USER_COLOR}%n@%m${RESET_COLOR} ${DIR_COLOR}%1~${RESET_COLOR} ${BRANCH_COLOR}${git_branch}${RESET_COLOR}]$ '
+
+
+
+# Alias
+alias ll='ls -lh'
+alias la='ls -alh'
+alias dc="cd"
+alias md='mkdir'
 
 #Alias
 alias ls='l'
